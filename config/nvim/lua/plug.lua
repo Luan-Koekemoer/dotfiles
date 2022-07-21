@@ -18,8 +18,11 @@ return require('packer').startup(function()
     opt = true}
     }
     use { 'Mofiqul/dracula.nvim' }                     -- colorscheme
+    
+    use { 'nvim-treesitter/nvim-treesitter' }          -- tree parser and syntax highlighting
+    use { 'p00f/nvim-ts-rainbow' }
 
--- [[DEV]]
+    -- [[DEV]]
     use {
         'nvim-telescope/telescope.nvim',                 -- fuzzy finder
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -31,5 +34,11 @@ return require('packer').startup(function()
     use { 'windwp/nvim-autopairs' }                    -- auto close brackets, etc.
     use { 'tpope/vim-surround' }                       -- modify surroundings pairs 
     use { 'voldikss/vim-floaterm' }                    -- floating terminal within nvim 
+
+    -- LSP
+  --  use { 'dense-analysis/ale' }                      -- ale is linter support
+
+    use { 'neovim/nvim-lspconfig' }                            -- neovim lsp support
+
 end
 )

@@ -1,0 +1,3 @@
+neovim
+Packer (nvim-packer-git -> AUR)
+

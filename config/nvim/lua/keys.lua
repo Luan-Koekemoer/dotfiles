@@ -1,13 +1,15 @@
 --[[ keys.lua ]]
 local map = vim.api.nvim_set_keymap
 
-
 -- Vanila NVIM custom keybindings
 
 -- remap the key used to leave insert mode
 map('i', 'jk', '<esc>', {})
 -- make space in normal mode press ':' 
 map('n', '<space>', ':', {})
+map('n', ';q', '[[:wq', {})
+map('n', ';w', '[[:w', {})
+
 
 
 -- PLUGIN Keybindings

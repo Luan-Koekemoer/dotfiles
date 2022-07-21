@@ -1,5 +1,5 @@
 --[[ init.lua ]]
-
+-- test comment
 -- LEADER
 -- These keybindings need to be defined before the first /
 -- is called; otherwise, it will default to "\"
@@ -11,7 +11,7 @@ require('vars')      -- Variables
 require('opts')      -- Options
 require('keys')      -- Keymaps
 require('plug')      -- Plugins
-require('icons')     -- Icons for Programming
+-- require('icons')     -- Icons for Programming
 
 -- PLUGINS:
 require('nvim-tree').setup{}

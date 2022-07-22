@@ -14,13 +14,10 @@ require('keys')      -- Keymaps
 require('plug')      -- Plugins
 -- require('icons')     -- Icons for Programming
 
--- PLUGINS:
-require('nvim-tree').setup{}
-require('lualine').setup {
-  options = {
-    theme = 'dracula-nvim'
-  }
-}
-require('nvim-autopairs').setup{}
-require('treesitter')
-require('lsp')
+-- PLUGIN CONFIGS
+require('plugconf/autopairs')
+require('plugconf/cmp')
+require('plugconf/lsp')
+require('plugconf/lualine')
+require('plugconf/tree')
+require('plugconf/treesitter')

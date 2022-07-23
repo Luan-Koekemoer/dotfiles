@@ -1,36 +1,56 @@
 -- For more information run ':h nvim-treesitter-modules'
 
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "lua", "rust", "cpp", "c_sharp", "javascript", "css", "html", "json", "java", "python", "typescript" },
-  sync_install = false,
-  auto_install = true,
-  ignore_install = { },
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	return
+end
 
-  highlight = {
-    enable = true,
-    disable = { },
-    additional_vim_regex_highlighting = false,
-  },
+configs.setup({
+	ensure_installed = {
+		"c",
+		"lua",
+		"rust",
+		"cpp",
+		"c_sharp",
+		"javascript",
+		"css",
+		"html",
+		"json",
+		"java",
+		"python",
+		"typescript",
+	},
+	sync_install = false,
+	auto_install = true,
+	ignore_install = {},
 
-  incremental_selection = {
-    enable = true
-  },
+	highlight = {
+		enable = true,
+		disable = {},
+		additional_vim_regex_highlighting = true,
+	},
 
-  textobjects = {
-    enable = true
-  },
+	indent = { enable = true, disable = { "yaml" } },
 
-  rainbow = {
-   enable = true,
-   disable = { },
-   extended_mode = true,
-   max_file_lines = nil,
-   -- colors = {}, -- table of hex strings
-   -- termcolors = {} -- table of colour name strings
-  },
+	incremental_selection = {
+		enable = true,
+	},
 
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false
-  }
-}
+	textobjects = {
+		enable = true,
+	},
+
+	rainbow = {
+		enable = true,
+		disable = {},
+		extended_mode = true,
+		max_file_lines = nil,
+		-- colors = {}, -- table of hex strings
+		-- termcolors = {} -- table of colour name strings
+	},
+
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
+	},
+})

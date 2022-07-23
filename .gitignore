@@ -1,2 +1,2 @@
-config/nvim/site
-config/nvim/site/*
+/config/nvim/site
+/config/nvim/site/*

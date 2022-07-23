@@ -3,7 +3,13 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 -- Vanila NVIM custom keybindings
-
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", opts)
@@ -73,6 +79,21 @@ map("n", "<leader>F", ":Format<cr>", opts)
 map("n", "<leader>L", ":lua _LAZYGIT_TOGGLE()<cr>", opts) -- requires to be in git repo
 map("n", "<leader>HT", ":ToggleTerm direction=horizontal size=20<cr>", opts)
 map("n", "<leader>t", ":ToggleTerm direction=float<cr>", opts)
+
+-- move to end or front of line in visual andinsert mode
+map('n', '<leader>g', '0', opts)
+map('n', '<leader>h', '$', opts)
+
+map('v', '<leader>g', '0', opts)
+map('v', '<leader>g', '0', opts)
+
+map('x', '<leader>h', '$', opts)
+map('x', '<leader>h', '$', opts)
+
+
+map('n', '<leader>o', 'o<Esc>', opts)
+map('n', '<leader>O', 'O<Esc>', opts)
+
 -- Toggle between mouse modes
 map('n', '<leader>a', ':set mouse=a<cr>', opts)
 map('n', '<leader>A', ':set mouse=r<cr>', opts)

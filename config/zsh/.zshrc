@@ -7,6 +7,11 @@ setopt interactive_comments
 stty stop undef		# Disable ctrl-s to freeze terminal.
 zle_highlight=('paste:none')
 
+# case insensitve autocompletion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+
 # beeping is annoying
 unsetopt BEEP
 
@@ -42,4 +47,3 @@ bindkey -r "^d"
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-

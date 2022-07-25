@@ -17,3 +17,13 @@ function zsh_add_plugin() {
         git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
     fi
 }
+
+
+# create and cd into function
+function mcd() { mkdir "$@" 2> >(sed s/mkdir/mcd/ 1>&2) && cd "$_"; }
+function gk(){
+  if [ -z "$SSH_AUTH_SOCK" ] ; then
+      eval `ssh-agent -s` > /dev/null
+      ssh-add $HOME'/.ssh/github_Luan-Koekemoer'
+  fi
+}

@@ -30,7 +30,7 @@ zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
 
 # Key-bindings
-# bindkey -s '^o' 'ranger^M'
+bindkey -s '^o' 'ranger^M'
 # bindkey -s '^f' 'zi^M'
 # bindkey -s '^s' 'ncdu^M'
 # bindkey -s '^n' 'nvim $(fzf)^M'

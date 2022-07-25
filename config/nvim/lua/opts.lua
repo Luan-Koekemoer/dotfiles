@@ -35,17 +35,9 @@ local options = {
 	-- [[ SPLITS ]]
 	splitright = true, -- bool: Place new window to right of current one
 	splitbelow = true, -- bool: Place new window below the current one
-
-	-- [[Auto formatting options]]
-	formatoptions = {
-		j = true,
-		c = false, -- Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-		r = false, -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
-		o = false, -- Auto-wrap comments using textwidth, inserting the current comment leader automatically.
-		q = true,
-		l = true,
-	},
 }
+
+vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]] -- Stop new line comments.
 
 for k, v in pairs(options) do
 	opt[k] = v

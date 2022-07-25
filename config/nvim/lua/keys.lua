@@ -88,7 +88,11 @@ map("n", "<leader>E", ":lua _RANGER_TOGGLE()<cr>", opts) -- requires ranger to b
 map("n", "<leader>T", ":ToggleTerm direction=horizontal size=20<cr>", opts)
 map("n", "<leader>t", ":ToggleTerm direction=float<cr>", opts)
 
--- move to end or front of line in visual andinsert mode
+-- auto run options
+map("n", "<leader>r", ":w<cr>:make<cr>", opts)
+map("n", "<leader>R", ":set makeprg=python3\\ ", opts)
+
+-- move to end or front of line in visual and insert mode
 map('n', '<leader>g', '0', opts)
 map('n', '<leader>h', '$', opts)
 

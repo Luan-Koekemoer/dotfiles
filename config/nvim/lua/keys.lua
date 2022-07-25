@@ -85,7 +85,7 @@ map('n', '<leader>V', ':split<cr>', opts)
 map("n", "<leader>F", ":Format<cr>", opts)
 map("n", "<leader>L", ":lua _LAZYGIT_TOGGLE()<cr>", opts) -- requires to be in git repo
 map("n", "<leader>E", ":lua _RANGER_TOGGLE()<cr>", opts) -- requires ranger to be installed (big terminal file mngr) 
-map("n", "<leader>HT", ":ToggleTerm direction=horizontal size=20<cr>", opts)
+map("n", "<leader>T", ":ToggleTerm direction=horizontal size=20<cr>", opts)
 map("n", "<leader>t", ":ToggleTerm direction=float<cr>", opts)
 
 -- move to end or front of line in visual andinsert mode

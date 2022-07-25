@@ -49,7 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -157,6 +157,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
+        wallpaper = "/home/luan/Pictures/wallpapers/d_car_night.jpg"
         gears.wallpaper.maximized(wallpaper, s, true)
     end
 end
@@ -567,7 +568,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 autorun = true
 autorunApps =
 {
-    "/home/luan/.config/fehbg",
+   -- "/home/luan/.config/fehbg",
 }
 if autorun then
    for app = 1, #autorunApps do

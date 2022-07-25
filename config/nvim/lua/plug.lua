@@ -15,7 +15,10 @@ return require("packer").startup(function()
 	use({ "p00f/nvim-ts-rainbow" })
 
 	-- [[DEV]]
+
+	-- telescope and extentions for telescope 
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- fuzzy
+
 	use({ "majutsushi/tagbar" }) -- code structure
 	use({ "Yggdroot/indentLine" }) -- see indentation
 	use({ "windwp/nvim-autopairs" }) -- auto close brackets, etc.
@@ -29,6 +32,7 @@ return require("packer").startup(function()
 	use({ "junegunn/gv.vim" }) -- commit history (:GV)
 	use({ "tpope/vim-fugitive" }) -- git integration (:G)
 	use({ "lewis6991/gitsigns.nvim" }) -- git signs to show detials of modified lines
+	use({ "ThePrimeagen/git-worktree.nvim" }) --A simple wrapper around git worktree operations, create, switch, and delete
 
 	-- [[AUTOCOMPLETION]]
 	use({ "hrsh7th/nvim-cmp" }) --Path completions
@@ -37,6 +41,7 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-cmdline" }) --cmdline completions
 	use({ "hrsh7th/cmp-nvim-lsp" }) --The completion plugin
 	use({ "hrsh7th/cmp-nvim-lua" })
+
 	-- [[SNIPPETS]]
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" }) --Pack with plenty of snippet support

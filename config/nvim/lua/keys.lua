@@ -69,7 +69,14 @@ map("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 map("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 map("n", "<leader>d", ":Bdelete<cr>", opts)
 map('n', '<leader>b', ":TagbarToggle<cr>", opts)
-map('n', '<leader>f', ":Telescope find_files<cr>", opts)
+
+--Telescope 
+map('n', '<leader>ff', ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+map('n', '<leader>fp',":lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>", opts)
+map('n', '<leader>fb', ":lua require('telescope.builtin').git_branches(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+map('n', '<leader>fc', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", opts) -- requires git-worktree extention
+map('n', '<leader>fw', ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", opts) -- requires git-worktree extention
+
 map('n', '<leader>c', ':wq<cr>', opts)
 map('n', '<leader>w', ':w<cr>', opts)
 map('n', '<leader>W', ':Bdelete<cr>:w<cr>', opts)

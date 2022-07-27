@@ -47,3 +47,5 @@ bindkey -r "^d"
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
+
+. "$HOME/.cargo/env" 

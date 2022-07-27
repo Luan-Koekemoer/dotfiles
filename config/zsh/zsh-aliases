@@ -15,6 +15,10 @@ alias nvimrc='nvim ~/.config/nvim/'
 # alias mv='mv -i'
 # alias rm='rm -i'
 
+#ls commands
+alias ls='ls --color=auto'
+alias l='ls -l --color=auto'
+alias la='ls -la --color=auto'
 
 # easier to read disk
 alias df='df -h'     # human-readable sizes

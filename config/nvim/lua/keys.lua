@@ -121,4 +121,4 @@ map("n", "<leader>a", ":set mouse=a<cr>", opts)
 map("n", "<leader>A", ":set mouse=r<cr>", opts)
 
 -- Lazy typing binds
-map("i", "<A-e>", "=", opts)
+map("i", "<A-f>", "=", opts)

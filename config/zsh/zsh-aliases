@@ -26,3 +26,5 @@ alias free='free -m' # show sizes in MB
 
 
 # alias gk='ssh-add ~/.ssh/github_Luan-Koekemoer'
+
+alias res="cd /home/luan/ComputerScience/University/COS700-Research/MainProj/"

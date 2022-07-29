@@ -17,6 +17,8 @@ unsetopt BEEP
 
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
+# [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
 
 # Normal files to source
 zsh_add_file "zsh-exports"

@@ -16,7 +16,7 @@ return require("packer").startup(function()
 
 	-- [[DEV]]
 
-	-- telescope and extentions for telescope 
+	-- telescope and extentions for telescope
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- fuzzy
 
 	use({ "majutsushi/tagbar" }) -- code structure
@@ -41,6 +41,7 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-cmdline" }) --cmdline completions
 	use({ "hrsh7th/cmp-nvim-lsp" }) --The completion plugin
 	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "ray-x/lsp_signature.nvim" }) -- Function signatures
 
 	-- [[SNIPPETS]]
 	use({ "L3MON4D3/LuaSnip" })

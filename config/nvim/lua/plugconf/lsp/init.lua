@@ -6,3 +6,4 @@ end
 require("plugconf.lsp.lsp-installer")
 require("plugconf.lsp.handlers").setup()
 require("plugconf.lsp.null-ls")
+require("plugconf.lsp.lsp-signature")

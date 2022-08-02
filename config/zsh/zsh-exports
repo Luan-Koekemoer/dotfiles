@@ -3,4 +3,4 @@
 
 export PATH="$HOME/.local/bin":$PATH
 
-
+# export PATH="/home/luan/ComputerScience/Programs/Anaconda/Anaconda3/bin:$PATH"

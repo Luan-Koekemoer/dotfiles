@@ -36,7 +36,7 @@ bindkey -s '^o' 'ranger^M'
 # bindkey -s '^f' 'zi^M'
 # bindkey -s '^s' 'ncdu^M'
 bindkey -s '^f' 'nvim $(fzf)^M'
-bindkey -s '^n' 'nvim .^M'
+bindkey -s '^v' 'nvim .^M'
 # bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up

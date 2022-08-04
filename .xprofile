@@ -1,8 +1,27 @@
 #!/bin/sh
 
+# XDG Locations
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 
-# zsh config dir
+# PROGRAMS CUSTOM HOMES 
 export ZDOTDIR=$HOME/.config/zsh
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export IPYTHONDIR="${XDG_CONFIG_HOME}/ipython"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+export KERAS_HOME="${XDG_STATE_HOME}/keras"
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+export WINEPREFIX="$XDG_DATA_HOME"/wine
+export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export CONDARC="$XDG_CONFIG_HOME/conda/condarc"
+
+
+

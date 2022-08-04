@@ -35,8 +35,8 @@ zsh_add_plugin "hlissner/zsh-autopair"
 bindkey -s '^o' 'ranger^M'
 # bindkey -s '^f' 'zi^M'
 # bindkey -s '^s' 'ncdu^M'
-# bindkey -s '^n' 'nvim $(fzf)^M'
-# bindkey -s '^v' 'nvim\n'
+bindkey -s '^f' 'nvim $(fzf)^M'
+bindkey -s '^v' 'nvim .^M'
 # bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up

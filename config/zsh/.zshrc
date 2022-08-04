@@ -50,20 +50,20 @@ bindkey -r "^d"
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 
-. "$HOME/.cargo/env" 
+# . "$HOME/.cargo/env" 
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/luan/ComputerScience/Programs/Anaconda/Anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# __conda_setup="$('/home/luan/DataHDD/Software/Anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/home/luan/ComputerScience/Programs/Anaconda/Anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/luan/ComputerScience/Programs/Anaconda/Anaconda3/etc/profile.d/conda.sh"
+#     if [ -f "/home/luan/DataHDD/Software/Anaconda/etc/profile.d/conda.sh" ]; then
+#         . "/home/luan/DataHDD/Software/Anaconda/etc/profile.d/conda.sh"
 #     else
-#         export PATH="/home/luan/ComputerScience/Programs/Anaconda/Anaconda3/bin:$PATH"
+#         export PATH="/home/luan/DataHDD/Software/Anaconda/bin:$PATH"
 #     fi
 # fi
 # unset __conda_setup
-# <<< conda initialize <<<
-
+# # <<< conda initialize <<<
+#

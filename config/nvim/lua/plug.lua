@@ -13,7 +13,7 @@ return require("packer").startup(function()
 	use({ "Mofiqul/dracula.nvim" }) -- colorscheme
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- tree parser and syntax highlighting
 	use({ "p00f/nvim-ts-rainbow" })
-
+	use({ "ap/vim-css-color" })
 	-- [[DEV]]
 
 	-- telescope and extentions for telescope

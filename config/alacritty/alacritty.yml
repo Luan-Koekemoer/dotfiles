@@ -5,7 +5,7 @@
 # [[IMPORTS]]
 import:
   # [[CURRENT THEME]]
-  - ~/.config/alacritty/themes/tokyo-night.yml 
+  - ~/.config/alacritty/themes/quixotic.yml 
 
 # [[ENVIROMENT]]
 env:

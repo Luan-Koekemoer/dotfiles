@@ -37,7 +37,7 @@ __conda_setup="$('/home/luan/DataHDD/Software/Anaconda/bin/conda' 'shell.zsh' 'h
   fi
   unset __conda_setup
 
-  conda activate AI_Env1
+  conda activate General_Env
   # # <<< conda initialize <<<
   #
 }

@@ -177,8 +177,8 @@ local function set_wallpaper(s)
 		if type(wallpaper) == "function" then
 			wallpaper = wallpaper(s)
 		end
-		wallpaper = "/home/luan/Pictures/wallpapers/d_car_night.jpg"
-		gears.wallpaper.maximized(wallpaper, s, true)
+		wallpaper = "/home/luan/Pictures/wallpapers/current.jpg"
+		gears.wallpaper.maximized(wallpaper, s, false)
 	end
 end
 

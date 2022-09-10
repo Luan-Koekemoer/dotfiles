@@ -178,7 +178,7 @@ local function set_wallpaper(s)
 			wallpaper = wallpaper(s)
 		end
 		wallpaper = "/home/luan/Pictures/wallpapers/current.jpg"
-		gears.wallpaper.maximized(wallpaper, s, false)
+		gears.wallpaper.maximized(wallpaper, s, true)
 	end
 end
 
@@ -362,10 +362,14 @@ globalkeys = gears.table.join(
 
 	awful.key({}, "XF86AudioLowerVolume", function()
 		awful.spawn("pactl set-sink-volume 0 -2%", false)
-	end)
+	end),
 	-- awful.key({}, "XF86AudioMute", function()
 	-- 	awful.util.spawn("amixer -D pulse sset Master toggle", false)
 	-- end)
+	-- Scripts
+	awful.key({ modkey }, "l", function()
+		awful.spawn("/home/luan/ComputerScience/bin/lock.sh", false)
+	end)
 )
 
 clientkeys = gears.table.join(

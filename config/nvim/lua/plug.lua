@@ -16,7 +16,7 @@ return require("packer").startup(function()
 	use({ "norcalli/nvim-colorizer.lua" })
 	-- [[DEV]]
 
-	 -- telescope and extentions for telescope
+	-- telescope and extentions for telescope
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- fuzzy
 
 	use({ "majutsushi/tagbar" }) -- code structure

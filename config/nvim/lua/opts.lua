@@ -18,7 +18,7 @@ local options = {
 
 	-- [[ THEME ]]
 	syntax = "ON", -- str:  Allow syntax highlighting
-	termguicolors = true, -- bool: If term supports ui color then enable
+	termguicolors = false, -- bool: If term supports ui color then enable
 
 	-- [[ SEARCH ]]
 	ignorecase = true, -- bool: Ignore case in search patterns

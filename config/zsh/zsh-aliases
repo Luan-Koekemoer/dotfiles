@@ -28,3 +28,9 @@ alias free='free -m' # show sizes in MB
 # alias gk='ssh-add ~/.ssh/github_Luan-Koekemoer'
 
 alias res="cd /home/luan/ComputerScience/University/COS700-Research/MainProj/"
+alias vpn="sudo openvpn /home/luan/Documents/Servers/DebianUK/luanUWU.ovpn"
+alias tmux="TERM=screen-256color-bce tmux"
+
+
+# android dev
+alias emu="cd $ANDROID_HOME/emulator/ && ./emulator @android-dev-emu"

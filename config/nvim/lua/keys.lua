@@ -42,6 +42,15 @@ map("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to enter
 map("i", "jk", "<ESC>", opts)
 
+function AutoSemi()
+	local r, c = unpack(vim.api.nvim_win_get_cursor(0))
+	--[[ return "<ESC>A;" + c + "|" ]]
+end
+
+-- https://alpha2phi.medium.com/neovim-for-beginners-lua-autocmd-and-keymap-functions-3bdfe0bebe42
+--[[ map("i", ";;", "<ESC>A;<ESC>", opts) -- todo: jump to previous spot ]]
+map("n", "<leader>;", "A;<ESC>", opts) -- todo: jump to previous spot
+
 -- Visual --
 -- Stay in indent mode
 map("v", "<", "<gv", opts)
@@ -98,6 +107,7 @@ map("n", "<leader>L", ":lua _LAZYGIT_TOGGLE()<cr>", opts) -- requires to be in g
 map("n", "<leader>E", ":lua _RANGER_TOGGLE()<cr>", opts) -- requires ranger to be installed (big terminal file mngr)
 map("n", "<leader>T", ":ToggleTerm direction=horizontal size=20<cr>", opts)
 map("n", "<leader>t", ":ToggleTerm direction=float<cr>", opts)
+map("n", "<leader>s", ":lua vim.lsp.buf.code_action()<cr>", opts)
 
 -- auto run options
 map("n", "<leader>r", ":w<cr>:make<cr>", opts)

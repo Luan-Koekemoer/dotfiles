@@ -6,6 +6,7 @@ end
 local actions = require("telescope.actions")
 
 require("telescope").load_extension("git_worktree")
+-- require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())
 
 telescope.setup({
 	defaults = {

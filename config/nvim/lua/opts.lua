@@ -35,9 +35,13 @@ local options = {
 	-- [[ SPLITS ]]
 	splitright = true, -- bool: Place new window to right of current one
 	splitbelow = true, -- bool: Place new window below the current one
+
+	-- [[ SELL CHECKING ]]
+  spell = true,
+  syn = 'off'
 }
 
-vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]] -- Stop new line comments.
+vim.cmd([[au BufEnter * set fo-=c fo-=r fo-=o]]) -- Stop new line comments.
 
 for k, v in pairs(options) do
 	opt[k] = v

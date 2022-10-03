@@ -1,7 +1,7 @@
 -- [[ plug.lua ]]
-
-return require("packer").startup(function()
+return require("packer").startup(function(use)
 	-- [[PLUGINS]]
+	use ({"wbthomason/packer.nvim"}) -- this is essential.
 
 	-- [[FILESYSTEM NAVIGATION]]
 	use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }) -- filesystem icons
@@ -33,9 +33,8 @@ return require("packer").startup(function()
 	use({ "tpope/vim-fugitive" }) -- git integration (:G)
 	use({ "lewis6991/gitsigns.nvim" }) -- git signs to show detials of modified lines
 	use({ "ThePrimeagen/git-worktree.nvim" }) --A simple wrapper around git worktree operations, create, switch, and delete
-
 	-- [[AUTOCOMPLETION]]
-	use({ "hrsh7th/nvim-cmp" }) --Path completions
+	use({ "hrsh7th/nvim-cmp",  requires="nvim-treesitter/nvim-treesitter"}) --Path completions
 	use({ "hrsh7th/cmp-buffer" }) --Buffer completions
 	use({ "hrsh7th/cmp-path" }) --Path completions
 	use({ "hrsh7th/cmp-cmdline" }) --cmdline completions
@@ -47,7 +46,7 @@ return require("packer").startup(function()
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" }) --Pack with plenty of snippet support
 
-	-- [[LSP]]
+	 -- [[LSP]] 
 	use({ "neovim/nvim-lspconfig" }) -- neovim lsp support
 	use({ "williamboman/nvim-lsp-installer" }) -- Installs lspconfig
 	use({ "jose-elias-alvarez/null-ls.nvim" }) --provides formatting support

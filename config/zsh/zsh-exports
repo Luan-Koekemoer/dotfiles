@@ -10,3 +10,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools
 export CHROME_EXECUTABLE=/bin/brave
+
+export EDITOR=nvim

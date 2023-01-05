@@ -1,5 +1,13 @@
 -- [[ plug.lua ]]
-return require("packer").startup(function(use)
+
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  print("Error loading config, make sure Packer is installed.")
+	return
+end
+
+
+return packer.startup(function(use)
 	-- [[PLUGINS]]
 	use ({"wbthomason/packer.nvim"}) -- this is essential.
 

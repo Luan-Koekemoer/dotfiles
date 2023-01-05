@@ -48,4 +48,5 @@ for k, v in pairs(options) do
 end
 
 -- [[ THEME ]]
-cmd("colorscheme dracula") -- cmd: Set the colorschme
+pcall(cmd, "colorscheme dracula")
+

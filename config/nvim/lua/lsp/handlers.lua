@@ -15,7 +15,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    virtual_text = false,
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -85,9 +85,9 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.document_formatting = false
   end
 
-  if client.name == "sumneko_lua" then
-    client.server_capabilities.document_formatting = false
-  end
+  --[[ if client.name == "sumneko_lua" then ]]
+  --[[   client.server_capabilities.document_formatting = false ]]
+  --[[ end ]]
 
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)

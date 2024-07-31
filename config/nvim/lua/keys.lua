@@ -43,8 +43,8 @@ map("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 map("i", "jk", "<ESC>", opts)
 
 function AutoSemi()
-	local r, c = unpack(vim.api.nvim_win_get_cursor(0))
-	--[[ return "<ESC>A;" + c + "|" ]]
+    local r, c = vim.api.nvim_win_get_cursor(0)
+    --[[ return "<ESC>A;" + c + "|" ]]
 end
 
 -- https://alpha2phi.medium.com/neovim-for-beginners-lua-autocmd-and-keymap-functions-3bdfe0bebe42
@@ -82,29 +82,29 @@ map("n", "<leader>b", ":TagbarToggle<cr>", opts)
 
 --Telescope
 map(
-	"n",
-	"<leader>ff",
-	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+    "n",
+    "<leader>ff",
+    ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    opts
 )
 map("n", "<leader>fp", ":lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>", opts)
 map(
-	"n",
-	"<leader>fb",
-	":lua require('telescope.builtin').git_branches(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+    "n",
+    "<leader>fb",
+    ":lua require('telescope.builtin').git_branches(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+    opts
 )
 map("n", "<leader>fc", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", opts) -- requires git-worktree extention
-map("n", "<leader>fw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", opts) -- requires git-worktree extention
+map("n", "<leader>fw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", opts)       -- requires git-worktree extention
 
 map("n", "<leader>c", ":wq<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>W", ":Bdelete<cr>:w<cr>", opts)
 map("n", "<leader>v", ":vsplit<cr>", opts)
 map("n", "<leader>V", ":split<cr>", opts)
-map("n", "<leader>F", ":Format<cr>", opts)
+map("n", "<leader>F", ":lua vim.lsp.buf.format()<cr>", opts)
 map("n", "<leader>L", ":lua _LAZYGIT_TOGGLE()<cr>", opts) -- requires to be in git repo
-map("n", "<leader>E", ":lua _RANGER_TOGGLE()<cr>", opts) -- requires ranger to be installed (big terminal file mngr)
+map("n", "<leader>E", ":lua _RANGER_TOGGLE()<cr>", opts)  -- requires ranger to be installed (big terminal file mngr)
 map("n", "<leader>T", ":ToggleTerm direction=horizontal size=20<cr>", opts)
 map("n", "<leader>t", ":ToggleTerm direction=float<cr>", opts)
 map("n", "<leader>s", ":lua vim.lsp.buf.code_action()<cr>", opts)

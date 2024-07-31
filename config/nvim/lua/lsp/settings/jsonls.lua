@@ -1,4 +1,4 @@
-local default_schemas = {} 
+local default_schemas = {}
 local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
 if status_ok then
   default_schemas = jsonls_settings.get_default_schemas()
@@ -98,7 +98,8 @@ local schemas = {
     url = "https://json.schemastore.org/commands.json",
   },
   {
-    description = "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
+    description =
+    "AWS CloudFormation provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.",
     fileMatch = {
       "*.cf.json",
       "cloudformation.json",
@@ -106,7 +107,8 @@ local schemas = {
     url = "https://raw.githubusercontent.com/awslabs/goformation/v5.2.9/schema/cloudformation.schema.json",
   },
   {
-    description = "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
+    description =
+    "The AWS Serverless Application Model (AWS SAM, previously known as Project Flourish) extends AWS CloudFormation to provide a simplified way of defining the Amazon API Gateway APIs, AWS Lambda functions, and Amazon DynamoDB tables needed by your serverless application.",
     fileMatch = {
       "serverless.template",
       "*.sam.json",
@@ -187,7 +189,7 @@ local opts = {
     commands = {
       Format = {
         function()
-          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
+          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
         end,
       },
     },

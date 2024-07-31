@@ -9,25 +9,29 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
+local colourPalette = require("colourPalette")
+local palette = colourPalette.Sunrise;
+
+
 local theme = {}
 theme.font          = "Hack Nerd Font 8"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#161616"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#404040"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal     = palette.taskbar.primary
+theme.bg_focus      = palette.taskbar.active
+theme.bg_urgent     = palette.taskbar.alert
+theme.bg_minimize   = palette.taskbar.inactive
+theme.bg_systray    = palette.taskbar.active
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = palette.text.primary
+theme.fg_focus      = palette.text.focus
+theme.fg_urgent     = palette.text.contrast
+theme.fg_minimize   = palette.text.secondary
 
-theme.useless_gap   = dpi(0)
-theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#000000"
-theme.border_marked = "#91231c"
+theme.useless_gap   = dpi(3)
+theme.border_width  = dpi(2)
+theme.border_normal = palette.window.primary
+theme.border_focus  = palette.window.secondary
+theme.border_marked = palette.window.alternative
 
 -- There are other variable sets
 -- overriding the default one when

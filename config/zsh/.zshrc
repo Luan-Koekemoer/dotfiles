@@ -52,3 +52,5 @@ autoload edit-command-line; zle -N edit-command-line
 
 # . "$HOME/.cargo/env" 
 
+
+. "/home/luan/.local/share/cargo/env"

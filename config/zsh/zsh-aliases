@@ -34,3 +34,5 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 # android dev
 alias emu="cd $ANDROID_HOME/emulator/ && ./emulator @android-dev-emu"
+alias python="python3"
+alias py="python3"

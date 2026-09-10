@@ -41,3 +41,47 @@ __conda_setup="$('/home/luan/DataHDD/Software/Anaconda/bin/conda' 'shell.zsh' 'h
   # # <<< conda initialize <<<
   #
 }
+
+
+#auto_pipenv_shell() {
+#    if [ -f "Pipfile" ] && [ -z "$PIPENV_ACTIVE" ]; then
+#        echo "Activating pipenv shell..."
+#        pipenv shell
+#    fi
+#}
+#
+## Trigger the function when entering a directory
+#cd() {
+#    builtin cd "$@" || return
+#    auto_pipenv_shell
+#}
+
+function start(){
+    set -e
+
+    # --- config ---
+    MY_PATH="$HOME/git/shareforce/"
+    SESSION="mysession"
+
+    # Start fresh (optional)
+    tmux has-session -t "$SESSION" 2>/dev/null && tmux kill-session -t "$SESSION"
+
+    # Window 1: "web" with two panes
+    tmux new-session -d -s "$SESSION" -n web -c "$MY_PATH"
+    tmux send-keys   -t "$SESSION":web 'cd "$MY_PATH" && ./manage.py celery' C-m
+    tmux split-window -h -t "$SESSION":web -c "$MY_PATH"
+    tmux send-keys   -t "$SESSION":web 'cd "$MY_PATH" && ./manage.py runserver' C-m
+
+    # Window 2: "editor"
+    tmux new-window  -t "$SESSION" -n editor -c "$MY_PATH"
+    tmux send-keys   -t "$SESSION":editor 'cd "$MY_PATH" && nvim .' C-m
+
+    # Window 3: "misc"
+    tmux new-window  -t "$SESSION" -n misc -c "$MY_PATH"
+
+    # Preselect Window 2
+    tmux select-window -t "$SESSION":editor
+
+    # Attach
+    tmux attach -t "$SESSION"
+}

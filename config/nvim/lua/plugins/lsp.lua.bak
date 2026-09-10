@@ -1,8 +1,5 @@
 local TreeSitter = {
-	-- `main`, not `master`: master is frozen at Neovim 0.10/0.11 and its own README
-	-- states 0.12 is unsupported. Under 0.12 it crashes the highlighter with
-	-- "attempt to call method 'range' (a nil value)".
-	{ "nvim-treesitter/nvim-treesitter", branch = "main", lazy = false, build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
 }
 
 local LanguageServerInstaller = { "williamboman/mason.nvim" }

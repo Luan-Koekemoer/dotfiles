@@ -1,87 +1,50 @@
 local Telescope = {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-        defaults = {
-            prompt_prefix = " ",
-            selection_caret = " ",
-            path_display = { "smart" },
-            mappings = function()
-                local actions = require("telescope.actions")
-                return {
-                    i = {
-                        ["<C-n>"] = actions.cycle_history_next,
-                        ["<C-p>"] = actions.cycle_history_prev,
+	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+	},
+	config = function()
+		local builtin = require("telescope.builtin")
+		local opts = { noremap = true, silent = true }
+		local map = vim.keymap.set
 
-                        ["<C-j>"] = actions.move_selection_next,
-                        ["<C-k>"] = actions.move_selection_previous,
+		-- Telescope Navigation Mappings
+		map("n", "<leader>ff", builtin.find_files, opts)
+		map("n", "<leader>lg", builtin.live_grep, opts)
+		map("n", "<leader>q", builtin.quickfix, opts)
 
-                        ["<C-c>"] = actions.close,
+		-- Telescope LSP Mappings
+		map("n", "gd", builtin.lsp_definitions, opts)
+		map("n", "gr", builtin.lsp_references, opts)
 
-                        ["<Down>"] = actions.move_selection_next,
-                        ["<Up>"] = actions.move_selection_previous,
+		-- Telescope Git Mappings
+		map("n", "<leader>gf", builtin.git_files, opts)
+		map("n", "<leader>gc", builtin.git_commits, opts)
+		map("n", "<leader>gb", builtin.git_branches, opts)
+		map("n", "<leader>gs", builtin.git_status, opts)
+		map("n", "<leader>gr", builtin.git_bcommits_range, opts)
 
-                        ["<CR>"] = actions.select_default,
-                        ["<C-x>"] = actions.select_horizontal,
-                        ["<C-v>"] = actions.select_vertical,
-                        ["<C-t>"] = actions.select_tab,
+		-- Telescope Tags Mappings
+		map("n", "<leader>ft", builtin.tags, opts)
 
-                        ["<C-u>"] = actions.preview_scrolling_up,
-                        ["<C-d>"] = actions.preview_scrolling_down,
-
-                        ["<PageUp>"] = actions.results_scrolling_up,
-                        ["<PageDown>"] = actions.results_scrolling_down,
-
-                        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-                        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-                        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-                        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-                        ["<C-l>"] = actions.complete_tag,
-                        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
-                    },
-
-                    n = {
-                        ["<esc>"] = actions.close,
-                        ["<CR>"] = actions.select_default,
-                        ["<C-x>"] = actions.select_horizontal,
-                        ["<C-v>"] = actions.select_vertical,
-                        ["<C-t>"] = actions.select_tab,
-
-                        ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-                        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-                        ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-                        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
-                        ["j"] = actions.move_selection_next,
-                        ["k"] = actions.move_selection_previous,
-                        ["H"] = actions.move_to_top,
-                        ["M"] = actions.move_to_middle,
-                        ["L"] = actions.move_to_bottom,
-
-                        ["<Down>"] = actions.move_selection_next,
-                        ["<Up>"] = actions.move_selection_previous,
-                        ["gg"] = actions.move_to_top,
-                        ["G"] = actions.move_to_bottom,
-
-                        ["<C-u>"] = actions.preview_scrolling_up,
-                        ["<C-d>"] = actions.preview_scrolling_down,
-
-                        ["<PageUp>"] = actions.results_scrolling_up,
-                        ["<PageDown>"] = actions.results_scrolling_down,
-
-                        ["?"] = actions.which_key,
-                    },
-
-
-
-                }
-            end
-        },
-        pickers = {},
-        extensions = {},
-    }
+		require("telescope").load_extension("fzf")
+	end,
+	sorting_strategy = "ascending",
+	windblend = 10,
 }
 
+local Luarocks = {
+	"vhyrro/luarocks.nvim",
+	priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+	config = true,
+}
 
-return { Telescope }
+local TelescopeFzf = { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+
+return { TelescopeFzf, Telescope }

@@ -7,8 +7,8 @@ return {
             signs = {
                 add = { text = "▎" },
                 change = { text = "▎" },
-                delete = { text = "契" },
-                topdelete = { text = "契" },
+                delete = { text = "X" },
+                topdelete = { text = "X" },
                 changedelete = { text = "▎" },
             },
             signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`

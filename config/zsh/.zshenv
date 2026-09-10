@@ -1,1 +1,1 @@
-. "/home/luan/.local/share/cargo/env"
+# . "/home/luan/.local/share/cargo/env"

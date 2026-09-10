@@ -1,4 +1,4 @@
-local NvimTree = {
+local NvimTree           = {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
@@ -10,7 +10,7 @@ local NvimTree = {
     end,
 }
 
-local TagBar = { "preservim/tagbar" }
+local TagBar             = { "preservim/tagbar" }
 local IntegratedTerminal = {
     "akinsho/toggleterm.nvim",
     opts = {
@@ -37,6 +37,13 @@ local IntegratedTerminal = {
     }
 }
 
+--[[ local lazygit            = Terminal:new({ cmd = "lazygit", hidden = true }) ]]
+--[[ local ranger             = Terminal:new({ cmd = "ranger", hidden = true }) ]]
+--[[]]
+--[[ function _LAZYGIT_TOGGLE() ]]
+--[[     lazygit:toggle() ]]
+--[[ end ]]
+
 
 local bufferLine = {
     "akinsho/bufferline.nvim",
@@ -49,7 +56,7 @@ local bufferLine = {
             left_mouse_command = "buffer %d",
             middle_mouse_command = nil,
             indicator = { icon = "▎" },
-            buffer_close_icon = "",
+            buffer_close_icon = "",
             modified_icon = "●",
             close_icon = "",
             left_trunc_marker = "",
@@ -65,7 +72,7 @@ local bufferLine = {
             show_close_icon = true,
             show_tab_indicators = true,
             persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-            separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+            separator_style = "thin",   -- | "thick" | "thin" | { 'any', 'any' },
             enforce_regular_tabs = true,
             always_show_bufferline = true,
         },

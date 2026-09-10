@@ -13,3 +13,8 @@ require("plug") -- Plugins
 
 -- load lsp configuration
 require("lsp")
+
+require("custom.tags") -- :RefreshPyTags + per-project 'tags'
+require("custom.kitty") -- suppress kitty's cursor_trail inside nvim
+
+vim.opt.clipboard = "unnamedplus"

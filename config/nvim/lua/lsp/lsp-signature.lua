@@ -3,6 +3,7 @@ if not status_ok then
     return
 end
 
+
 lsp_signature.setup({
     debug = false,                                            -- set to true to enable debug logging
     log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
